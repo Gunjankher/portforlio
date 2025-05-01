@@ -73,7 +73,7 @@ export const getAllTimeline = () => async (dispatch) => {
   try {
     const response = await axios.get(
       // "https://mern-stack-portfolio-backend-code.onrender.com/api/v1/timeline/getall",
-      "http://localhost:5000/api/v1/timeline/getall",
+      "https://portforlio-hoiq.onrender.com/api/v1/timeline/getall",
       { withCredentials: true }
     );
     dispatch(
@@ -92,7 +92,7 @@ export const addNewTimeline = (data) => async (dispatch) => {
   try {
     const response = await axios.post(
       // "https://mern-stack-portfolio-backend-code.onrender.com/api/v1/timeline/add",
-      "http://localhost:5000/api/v1/timeline/add",
+      "https://portforlio-hoiq.onrender.com/api/v1/timeline/add",
       data,
       {
         withCredentials: true,
@@ -114,7 +114,7 @@ export const deleteTimeline = (id) => async (dispatch) => {
   try {
     const response = await axios.delete(
       // `https://mern-stack-portfolio-backend-code.onrender.com/api/v1/timeline/delete/${id}`,
-      `http://localhost:5000/api/v1/timeline/delete/${id}`,
+      `https://portforlio-hoiq.onrender.com/api/v1/timeline/delete/${id}`,
       {
         withCredentials: true,
       }

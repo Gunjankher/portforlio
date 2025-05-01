@@ -8,7 +8,7 @@ const MyApps = () => {
     const getMyApps = async () => {
       const { data } = await axios.get(
        // "https://mern-stack-portfolio-backend-code.onrender.com/api/v1/softwareapplication/getall",
-        "http://localhost:5000/api/v1/softwareapplication/getall",
+        "https://portforlio-green.vercel.app//api/v1/softwareapplication/getall",
         { withCredentials: true }
       );
       setApps(data.softwareApplications);

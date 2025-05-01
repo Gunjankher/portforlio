@@ -58,7 +58,7 @@ export const getAllMessages = () => async (dispatch) => {
   try {
     const response = await axios.get(
     //  "https://mern-stack-portfolio-backend-code.onrender.com/api/v1/message/getall",
-      "http://localhost:5000/api/v1/message/getall",
+      "https://portforlio-hoiq.onrender.com/api/v1/message/getall",
       { withCredentials: true }
     );
     dispatch(
@@ -77,7 +77,7 @@ export const deleteMessage = (id) => async (dispatch) => {
   try {
     const response = await axios.delete(
      // `https://mern-stack-portfolio-backend-code.onrender.com/api/v1/message/delete/${id}`,
-      `http://localhost:5000/api/v1/message/delete/${id}`,
+      `https://portforlio-hoiq.onrender.com/api/v1/message/delete/${id}`,
       {
         withCredentials: true,
       }

@@ -19,7 +19,7 @@ const Hero = () => {
     const getMyProfile = async () => {
       const { data } = await axios.get(
        // "https://mern-stack-portfolio-backend-code.onrender.com/api/v1/user/portfolio/me",
-        "http://localhost:5000/api/v1/user/portfolio/me",
+        "https://portforlio-green.vercel.app//api/v1/user/portfolio/me",
         { withCredentials: true }
       );
       setUser(data.user);

@@ -88,7 +88,7 @@ export const getAllSkills = () => async (dispatch) => {
   try {
     const response = await axios.get(
      // "https://mern-stack-portfolio-backend-code.onrender.com/api/v1/skill/getall",
-      "http://localhost:5000/api/v1/skill/getall",
+      "https://portforlio-hoiq.onrender.com/api/v1/skill/getall",
       { withCredentials: true }
     );
     dispatch(skillSlice.actions.getAllSkillsSuccess(response.data.skills));
@@ -105,7 +105,7 @@ export const addNewSkill = (data) => async (dispatch) => {
   try {
     const response = await axios.post(
        //"https://mern-stack-portfolio-backend-code.onrender.com/api/v1/skill/add",
-      "http://localhost:5000/api/v1/skill/add",
+      "https://portforlio-hoiq.onrender.com/api/v1/skill/add",
       data,
       {
         withCredentials: true,
@@ -126,7 +126,7 @@ export const updateSkill = (id, proficiency) => async (dispatch) => {
   try {
     const response = await axios.put(
       // `https://mern-stack-portfolio-backend-code.onrender.com/api/v1/skill/update/${id}`,
-      `http://localhost:5000/api/v1/skill/update/${id}`,
+      `https://portforlio-hoiq.onrender.com/api/v1/skill/update/${id}`,
       { proficiency },
       {
         withCredentials: true,
@@ -145,7 +145,7 @@ export const deleteSkill = (id) => async (dispatch) => {
   try {
     const response = await axios.delete(
        //`https://mern-stack-portfolio-backend-code.onrender.com/api/v1/skill/delete/${id}`, 
-      `http://localhost:5000/api/v1/skill/delete/${id}`, 
+      `https://portforlio-hoiq.onrender.com/api/v1/skill/delete/${id}`, 
       {
         withCredentials: true,
       }
