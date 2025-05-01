@@ -6,7 +6,7 @@ const Timeline = () => {
   useEffect(() => {
     const getMyTimeline = async () => {
       const { data } = await axios.get(
-        "https://portforlio-green.vercel.app//api/v1/timeline/getall",
+        "https://portforlio-brys.onrender.com/api/v1/timeline/getall",
         { withCredentials: true }
       );
       setTimeline(data.timelines);

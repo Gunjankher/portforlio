@@ -52,7 +52,7 @@ export const forgotPassword = (email) => async (dispatch) => {
     console.log(email);
     const response = await axios.post(
        //"https://mern-stack-portfolio-backend-code.onrender.com/api/v1/user/password/forgot",
-      "https://portforlio-hoiq.onrender.com/api/v1/user/password/forgot",
+      "https://portforlio-brys.onrender.com/api/v1/user/password/forgot",
       { email },
       { withCredentials: true, headers: { "Content-Type": "application/json" } }
     );
@@ -76,7 +76,7 @@ export const resetPassword =
       dispatch(forgotResetPassSlice.actions.resetPasswordRequest());
       const response = await axios.put(
        // ` https://mern-stack-portfolio-backend-code.onrender.com/api/v1/user/password/reset/${token}`,
-        `https://portforlio-hoiq.onrender.com/api/v1/user/password/reset/${token}`,
+        `https://portforlio-brys.onrender.com/api/v1/user/password/reset/${token}`,
         { password, confirmPassword },
         {
           withCredentials: true,

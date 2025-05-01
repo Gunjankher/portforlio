@@ -115,7 +115,7 @@ export const login = (email, password) => async (dispatch) => {
     const { data } = await axios.post(
       // "https://mern-stack-portfolio-backend-code.onrender.com/api/v1/user/login",
 
-     " https://portforlio-hoiq.onrender.com/api/v1/user/login",
+     "https://portforlio-brys.onrender.com/api/v1/user/login",
       
 
       { email, password },
@@ -134,7 +134,7 @@ export const getUser = () => async (dispatch) => {
     const { data } = await axios.get(
       
       // "https://mern-stack-portfolio-backend-code.onrender.com/api/v1/user/me"
-      "https://portforlio-hoiq.onrender.com/api/v1/user/me"
+      "https://portforlio-brys.onrender.com/api/v1/user/me"
       
       , {
       withCredentials: true,
@@ -150,7 +150,7 @@ export const logout = () => async (dispatch) => {
   try {
     const { data } = await axios.get(
       // "https://mern-stack-portfolio-backend-code.onrender.com/api/v1/user/logout",
-      "https://portforlio-hoiq.onrender.com/api/v1/user/logout",
+      "https://portforlio-brys.onrender.com/api/v1/user/logout",
       { withCredentials: true }
     );
     dispatch(userSlice.actions.logoutSuccess(data.message));
@@ -166,7 +166,7 @@ export const updatePassword =
     try {
       const { data } = await axios.put(
         // "https://mern-stack-portfolio-backend-code.onrender.com/api/v1/user/password/update",
-        "https://portforlio-hoiq.onrender.com/api/v1/user/password/update",
+        "https://portforlio-brys.onrender.com/api/v1/user/password/update",
         { currentPassword, newPassword, confirmNewPassword },
         {
           withCredentials: true,
@@ -187,7 +187,7 @@ export const updateProfile = (data) => async (dispatch) => {
   try {
     const response = await axios.put(
       // "https://mern-stack-portfolio-backend-code.onrender.com/api/v1/user/me/profile/update",
-      "https://portforlio-hoiq.onrender.com/api/v1/user/me/profile/update",
+      "https://portforlio-brys.onrender.com/api/v1/user/me/profile/update",
       data,
       {
         withCredentials: true,

@@ -19,7 +19,7 @@ const ProjectView = () => {
   useEffect(() => {
     const getProject = async () => {
       await axios
-        .get(`https://portforlio-hoiq.onrender.com/api/v1/project/get/${id}`, {
+        .get(`https://portforlio-brys.onrender.com/api/v1/project/get/${id}`, {
           withCredentials: true,
         })
         .then((res) => {

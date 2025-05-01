@@ -11,7 +11,7 @@ const Portfolio = () => {
     const getMyProjects = async () => {
       const { data } = await axios.get(
         //"https://mern-stack-portfolio-backend-code.onrender.com/api/v1/project/getall",
-        "https://portforlio-green.vercel.app//api/v1/project/getall",
+        "https://portforlio-brys.onrender.com/api/v1/project/getall",
         { withCredentials: true }
       );
       setProjects(data.projects);
