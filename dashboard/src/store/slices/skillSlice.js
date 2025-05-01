@@ -88,7 +88,7 @@ export const getAllSkills = () => async (dispatch) => {
   try {
     const response = await axios.get(
      // "https://mern-stack-portfolio-backend-code.onrender.com/api/v1/skill/getall",
-      "https://portforlio-hoiq.onrender.com/api/v1/skill/getall",
+      "https://portforlio-green.vercel.app/api/v1/skill/getall",
       { withCredentials: true }
     );
     dispatch(skillSlice.actions.getAllSkillsSuccess(response.data.skills));
