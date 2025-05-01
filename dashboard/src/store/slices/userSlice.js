@@ -115,8 +115,7 @@ export const login = (email, password) => async (dispatch) => {
     const { data } = await axios.post(
       // "https://mern-stack-portfolio-backend-code.onrender.com/api/v1/user/login",
 
-     "https://portforlio-brys.onrender.com/api/v1/user/login",
-      
+      "https://portforlio-brys.onrender.com/api/v1/user/login",
 
       { email, password },
       { withCredentials: true, headers: { "Content-Type": "application/json" } }
@@ -132,13 +131,13 @@ export const getUser = () => async (dispatch) => {
   dispatch(userSlice.actions.loadUserRequest());
   try {
     const { data } = await axios.get(
-      
       // "https://mern-stack-portfolio-backend-code.onrender.com/api/v1/user/me"
-      "https://portforlio-brys.onrender.com/api/v1/user/me"
-      
-      , {
-      withCredentials: true,
-    });
+      "https://portforlio-brys.onrender.com/api/v1/user/me",
+
+      {
+        withCredentials: true,
+      }
+    );
     dispatch(userSlice.actions.loadUserSuccess(data.user));
     dispatch(userSlice.actions.clearAllErrors());
   } catch (error) {
