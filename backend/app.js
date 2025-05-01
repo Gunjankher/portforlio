@@ -33,10 +33,12 @@ const allowedOrigins = [
 app.use(
   cors({
     origin: function (origin, callback) {
+      console.log("Incoming request origin:", origin);
       const normalizedOrigin = normalizeOrigin(origin);
       if (!origin || allowedOrigins.includes(normalizedOrigin)) {
         callback(null, true);
       } else {
+        console.log("Blocked by CORS:", normalizedOrigin);
         callback(new Error("Not allowed by CORS"));
       }
     },
@@ -44,6 +46,7 @@ app.use(
     methods: ["GET", "POST", "PUT", "DELETE"],
   })
 );
+
 
 
 app.use(cookieParser());
