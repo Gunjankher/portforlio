@@ -28,9 +28,8 @@ dotenv.config();
 const normalizeOrigin = (origin) => origin?.replace(/\/+$/, "");
 
 const allowedOrigins = [
-  "http://localhost:5173",
-      "https://portforlio-algc23umj-gunjan-khers-projects.vercel.app",
-      "https://portforlio-1mx5.vercel.app"
+  "https://portforlio-1mx5.vercel.app",
+  'https://portforlio-green.vercel.app'
 
 ];
 
