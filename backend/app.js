@@ -24,33 +24,29 @@ dotenv.config();
 // );
 
 
-// Helper to clean trailing slashes
-const normalizeOrigin = (origin) => origin?.replace(/\/+$/, "");
 
-// Main allowed URLs from .env
+
 const allowedOrigins = [
-  normalizeOrigin(process.env.PORTFOLIO_URL),
-  normalizeOrigin(process.env.DASHBOARD_URL),
+  process.env.PORTFOLIO_URL,
+  process.env.DASHBOARD_URL,
 ];
 
-// Allow also Vercel preview deployments
-const isAllowedOrigin = (origin) => {
-  const normalizedOrigin = normalizeOrigin(origin);
-  return (
-    !origin ||
-    allowedOrigins.includes(normalizedOrigin) ||
-    /^https:\/\/portforlio-[a-z0-9\-]+\.vercel\.app$/.test(normalizedOrigin)
-  );
-};
+// Regex for Vercel preview domains (e.g., https://portforlio-xxxxx.vercel.app)
+const vercelPreviewRegex = /^https:\/\/portforlio-[a-z0-9\-]+\.vercel\.app$/;
 
 app.use(
   cors({
     origin: function (origin, callback) {
-      console.log("Incoming request origin:", origin);
-      if (isAllowedOrigin(origin)) {
+      console.log("Request Origin:", origin);
+      
+      if (
+        !origin || 
+        allowedOrigins.includes(origin) || 
+        vercelPreviewRegex.test(origin)
+      ) {
         callback(null, true);
       } else {
-        console.log("Blocked by CORS:", origin);
+        console.log("❌ Blocked by CORS:", origin);
         callback(new Error("Not allowed by CORS"));
       }
     },
