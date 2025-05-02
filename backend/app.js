@@ -24,20 +24,18 @@ dotenv.config();
 // );
 
 
-// Normalize function to remove trailing slashes
+// Helper to clean trailing slashes
 const normalizeOrigin = (origin) => origin?.replace(/\/+$/, "");
 
-// Allowlist from environment variables
+// Main allowed URLs from .env
 const allowedOrigins = [
   normalizeOrigin(process.env.PORTFOLIO_URL),
   normalizeOrigin(process.env.DASHBOARD_URL),
 ];
 
-// Check if origin is allowed
+// Allow also Vercel preview deployments
 const isAllowedOrigin = (origin) => {
   const normalizedOrigin = normalizeOrigin(origin);
-
-  // Allow localhost (for dev), allow specific origins, and Vercel previews
   return (
     !origin ||
     allowedOrigins.includes(normalizedOrigin) ||
@@ -45,7 +43,6 @@ const isAllowedOrigin = (origin) => {
   );
 };
 
-// CORS middleware
 app.use(
   cors({
     origin: function (origin, callback) {
@@ -61,6 +58,7 @@ app.use(
     methods: ["GET", "POST", "PUT", "DELETE"],
   })
 );
+
 
 
 
