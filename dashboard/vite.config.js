@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [react()],
   server:{
     proxy:{
-      '/api':'https://portforlio-brys.onrender.com/api/v1'
+      '/api':'https://localhost:5000/api/v1'
     }
   },
   resolve: {
