@@ -26,22 +26,24 @@ dotenv.config();
 
 
 
+
 const allowedOrigins = [
-  process.env.PORTFOLIO_URL,
-  process.env.DASHBOARD_URL,
+  "http://localhost:3000",
+  "https://portforlio-green.vercel.app",
+  "https://portforlio-1mx5.vercel.app",
 ];
 
-// Regex for Vercel preview domains (e.g., https://portforlio-xxxxx.vercel.app)
+// Allow Vercel preview deployments dynamically
 const vercelPreviewRegex = /^https:\/\/portforlio-[a-z0-9\-]+\.vercel\.app$/;
 
 app.use(
   cors({
     origin: function (origin, callback) {
-      console.log("Request Origin:", origin);
-      
+      console.log("Origin:", origin);
+
       if (
-        !origin || 
-        allowedOrigins.includes(origin) || 
+        !origin ||
+        allowedOrigins.includes(origin) ||
         vercelPreviewRegex.test(origin)
       ) {
         callback(null, true);
@@ -54,6 +56,9 @@ app.use(
     methods: ["GET", "POST", "PUT", "DELETE"],
   })
 );
+
+// After CORS
+app.use(express.json());
 
 
 
