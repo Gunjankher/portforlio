@@ -28,9 +28,10 @@ dotenv.config();
 const normalizeOrigin = (origin) => origin?.replace(/\/+$/, "");
 
 const allowedOrigins = [
-  normalizeOrigin(process.env.PORTFOLIO_URL),
-  normalizeOrigin(process.env.DASHBOARD_URL),
-  normalizeOrigin(process.env.VERCEL_PREVIEW_URL),
+  process.env.PORTFOLIO_URL,
+  process.env.DASHBOARD_URL,
+  "https://portforlio-1mx5.vercel.app",
+
 ];
 
 
