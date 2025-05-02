@@ -23,22 +23,37 @@ dotenv.config();
 //   })
 // );
 
+
+// Normalize function to remove trailing slashes
 const normalizeOrigin = (origin) => origin?.replace(/\/+$/, "");
 
+// Allowlist from environment variables
 const allowedOrigins = [
   normalizeOrigin(process.env.PORTFOLIO_URL),
   normalizeOrigin(process.env.DASHBOARD_URL),
 ];
 
+// Check if origin is allowed
+const isAllowedOrigin = (origin) => {
+  const normalizedOrigin = normalizeOrigin(origin);
+
+  // Allow localhost (for dev), allow specific origins, and Vercel previews
+  return (
+    !origin ||
+    allowedOrigins.includes(normalizedOrigin) ||
+    /^https:\/\/portforlio-[a-z0-9\-]+\.vercel\.app$/.test(normalizedOrigin)
+  );
+};
+
+// CORS middleware
 app.use(
   cors({
     origin: function (origin, callback) {
       console.log("Incoming request origin:", origin);
-      const normalizedOrigin = normalizeOrigin(origin);
-      if (!origin || allowedOrigins.includes(normalizedOrigin)) {
+      if (isAllowedOrigin(origin)) {
         callback(null, true);
       } else {
-        console.log("Blocked by CORS:", normalizedOrigin);
+        console.log("Blocked by CORS:", origin);
         callback(new Error("Not allowed by CORS"));
       }
     },
