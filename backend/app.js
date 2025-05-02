@@ -28,9 +28,9 @@ dotenv.config();
 const normalizeOrigin = (origin) => origin?.replace(/\/+$/, "");
 
 const allowedOrigins = [
-  process.env.PORTFOLIO_URL,
-  process.env.DASHBOARD_URL,
-  "https://portforlio-1mx5.vercel.app",
+  "http://localhost:5173",
+      "https://portforlio-algc23umj-gunjan-khers-projects.vercel.app",
+      "https://portforlio-1mx5.vercel.app"
 
 ];
 
@@ -39,7 +39,7 @@ app.use(
   cors({
     origin: function (origin, callback) {
       const normalizedOrigin = normalizeOrigin(origin);
-      console.log("Origin:", origin);
+      console.log("Origindsfsfsdfsdfsdfsdfsd:", origin);
       if (!origin || allowedOrigins.includes(normalizedOrigin)) {
         callback(null, true);
       } else {
