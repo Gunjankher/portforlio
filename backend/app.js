@@ -30,7 +30,9 @@ const normalizeOrigin = (origin) => origin?.replace(/\/+$/, "");
 const allowedOrigins = [
   normalizeOrigin(process.env.PORTFOLIO_URL),
   normalizeOrigin(process.env.DASHBOARD_URL),
+  normalizeOrigin(process.env.VERCEL_PREVIEW_URL),
 ];
+
 
 app.use(
   cors({
