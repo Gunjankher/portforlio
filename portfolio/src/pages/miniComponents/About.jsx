@@ -32,16 +32,12 @@ const About = () => {
           </div>
           <div className="flex justify-center flex-col tracking-[1px] text-xl gap-5">
             <p>
-              My name is Zeeshan, but my followers call me Zeeshu. I will
-              graduate in Software Engineering from SMIU around 2024. I work as
-              a web developer and freelancer. My hobbies include watching
-              movies, series, playing video games, and occasionally cooking.
-            </p>
-            <p>
-              I have interests not only in technology but also in movies,
-              series, video games, and cooking. I excel in meeting deadlines for
-              my work.
-            </p>
+  My name is Gunjan Kher. I work as a web developer and freelancer. My hobbies include watching movies and series, playing video games, and Music.
+</p>
+<p>
+  I have a deep interest not only in technology but also in entertainment, gaming, and culinary arts. I take pride in meeting deadlines and delivering quality work.
+</p>
+
           </div>
         </div>
         <p className="tracking-[1px] text-xl">

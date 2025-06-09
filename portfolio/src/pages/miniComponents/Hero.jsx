@@ -49,7 +49,7 @@ const Hero = () => {
       </h1>
       <div className="w-fit px-5 py-2 bg-slate-50 rounded-[20px] flex gap-5 
       items-center mt-4 md:mt-8 lg:mt-10">
-        <Link to={"https://www.youtube.com/@CodeWithZeeshu"} target="_blank">
+        <Link to={"https://www.youtube.com/@GunjanSpeaks1"} target="_blank">
           <Youtube className="text-red-500 w-7 h-7"/>
         </Link>
         <Link to={user?.instagramURL} target="_blank">
@@ -66,7 +66,7 @@ const Hero = () => {
         </Link>
       </div>
       <div className="mt-4 md:mt-8 lg:mt-10  flex gap-3">
-        <Link to={user?.githubURL} target="_blank">
+        <Link to={'https://github.com/Gunjankher?tab=repositories'} target="_blank">
           <Button className="rounded-[30px] flex items-center gap-2 flex-row">
             <span>
               <Github />
@@ -74,14 +74,14 @@ const Hero = () => {
             <span>Github</span>
           </Button>
         </Link>
-        <Link to={user?.resume && user?.resume.url} target="_blank">
+        {/* <Link to={user?.resume && user?.resume.url} target="_blank">
           <Button className="rounded-[30px] flex items-center gap-2 flex-row">
             <span>
               <ExternalLink />
             </span>
             <span>Resume </span>
           </Button>
-        </Link>
+        </Link> */}
       </div>
       <p className="mt-8 text-xl tracking-[2px]">{user?.aboutMe}</p>
       <hr className="my-8 md::my-10 " />
