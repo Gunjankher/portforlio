@@ -32,7 +32,7 @@ const About = () => {
           </div>
           <div className="flex justify-center flex-col tracking-[1px] text-xl gap-5">
             <p>
-  My name is Gunjan Kher. I work as a web developer and freelancer. My hobbies include watching movies and series, playing video games, and Music.
+  My name is Gunjan Kher. I am a web developer . My hobbies include watching movies and series, playing video games, and Music.
 </p>
 <p>
   I have a deep interest not only in technology but also in entertainment, gaming, and culinary arts. I take pride in meeting deadlines and delivering quality work.
@@ -40,9 +40,7 @@ const About = () => {
 
           </div>
         </div>
-        <p className="tracking-[1px] text-xl">
-          My dedication and perseverance in timely delivery of work are integral
-          to me. I maintain the courage to face any challenges for extended
+        <p className="tracking-[1px] text-xl"> I maintain the courage to face any challenges for extended
           periods.
         </p>
       </div>
